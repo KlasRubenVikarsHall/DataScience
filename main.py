@@ -1,5 +1,5 @@
-from database import engine, Base
-import models
+from src.database import engine, Base
+import src.models as models
 import pandas as pd
 import numpy as np
 
@@ -16,7 +16,7 @@ print(data.columns)
 data.to_sql(
     name="world_population",   # table name in postgres
     con=engine,
-    if_exists="replace",       # or "append" / "fail"
+    if_exists="replace",     
     index=False,
 )
 
